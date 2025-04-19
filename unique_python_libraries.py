@@ -1,11 +1,16 @@
 # Redlines – Visual Diff Between Texts (Markdown)
 # Use: Compare two versions of a text with red/green markups.
 
+from IPython.display import display, Markdown, Latex, HTML, JSON
+display(HTML(response))
+
 from redlines import Redlines
-from IPython.display import display, Markdown
 
 original = "The AI model is fast and accurate."
 modified = "The AI system is efficient and accurate."
+
+diff = Redlines(original, modified)
+display(Markdown(diff.output_markdown))
 
 # IceCream – For Debugging Output Elegantly
 # Use: Print variable names and values for quick debugging.
